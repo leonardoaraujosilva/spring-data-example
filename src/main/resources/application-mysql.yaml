@@ -1,0 +1,10 @@
+# Caso você suba a aplicação usando a parâmetrização -Dspring.profiles.active=mysql (pois o nome do arquivo é application-mysql)
+# A configuração do application.yaml será utilizada, e será sobrescrito os campos que os valores estiverem aqui
+
+spring:
+# Configuração de propriedades de banco de dados, caso troque para mysql, alterar a url e driver, além de usuário e senha
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/spring_data_example?createDatabaseIfNotExist=true&serverTimezone=UTC"
+    username: "root"
+    password: "root"

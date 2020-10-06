@@ -1,0 +1,21 @@
+
+spring:
+# Configuração de propriedades de banco de dados, caso troque para mysql, alterar a url e driver, além de usuário e senha
+  datasource:
+    url: "jdbc:h2:mem:testdb"
+    driverClassName: "org.h2.Driver"
+    username: "root"
+    password: "root"
+# Apenas necessário usando Banco H2. Como ele é um banco in-memory, fica acessível com o usuário e senha acima na porta
+# em que subir o sistema. Abra o navegador como localhost:8080/h2-console que voce conseguirá acessá-lo
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+# Esse parametro não deve ser usado em produção pois ele realiza operações irreversíveis em banco
+# Entretanto, para testes é util, pois ele também cria a estrutura completa do seu banco caso não exista
+      ddl-auto: update
+
+server:
+  port: 8080
